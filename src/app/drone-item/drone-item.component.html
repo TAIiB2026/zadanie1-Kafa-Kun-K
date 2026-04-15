@@ -5,11 +5,11 @@
     <p>Poziom energii: {{ energyLevel }}</p>
 
     <div style="margin-top: 10px; font-weight: bold;">
-        @if (energyLevel < 20) {
+        @if (energyLevel <= 15) {
             <p style="color: red;">Dron należy podłączyć do ładowania!</p>
-        } @else if (energyLevel >= 20 && energyLevel < 90) {
+        } @else if (energyLevel >= 16 && energyLevel <= 90) {
             <p style="color: yellow;">Poziom baterii jest w normie.</p>
-        } @else if (energyLevel >= 90) {
+        } @else if (energyLevel > 90) {
             <p style="color: green;">Dron jest w pełni naładowany.</p>
         }
     </div>
