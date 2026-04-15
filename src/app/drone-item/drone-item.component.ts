@@ -1,10 +1,11 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ZoomDirective } from '../zoom.directive';
 
 @Component({
   selector: 'app-drone-item',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, ZoomDirective],
   templateUrl: './drone-item.component.html',
   styles: []
 })

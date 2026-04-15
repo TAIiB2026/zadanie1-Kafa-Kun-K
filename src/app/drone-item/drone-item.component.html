@@ -1,9 +1,18 @@
 <!-- <p>drone-item works!</p> -->
 
-<div style="border: 1px solid #ccc; padding: 10 px; margin: 10 px;">
-    <h3>Dron: {{ droneName }}</h3>
-
+<div style="border: 1px solid #ccc; padding: 10 px; margin: 10 px; border-radius: 8 px;">
+    <h3 appZoom style="cursor: pointer;">Dron: {{ droneName }}</h3>
     <p>Poziom energii: {{ energyLevel }}</p>
 
-    <button (click)="increaseEnergy()">Naładuj drona</button>
+    <div style="margin-top: 10 px; font-weight: bold;">
+        @if (energyLevel < 15) {
+            <p style="color: red;">Dron należy podłączyć do ładowania!</p>
+        } @else if (energyLevel >= 16 && energyLevel <= 90) {
+            <p style="color: yellow;">Poziom baterii jest w normie.</p>
+        } @else if (energyLevel > 90) {
+            <p style="color: green;">Dron jest w pełni naładowany.</p>
+        }
+    </div>
+
+    <button (click)="increaseEnergy()">Naładuj drona (+5)</button>
 </div>
