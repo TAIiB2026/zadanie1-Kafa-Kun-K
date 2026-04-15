@@ -10,11 +10,11 @@ export class ZoomDirective {
 
   private setFontSize(size: string) {
     this.renderer.setStyle(this.el.nativeElement, 'fontSize', size);
-    this.renderer.setStyle(this.el.nativeElement, 'transition', '0.03 s');
+    this.renderer.setStyle(this.el.nativeElement, 'transition', '0.03s');
   }
 
-  @HostListener('mouseeneter') onMouseEnter() {
-    this.setFontSize('24 px');
+  @HostListener('mouseenter') onMouseEnter() {
+    this.setFontSize('24px');
   }
 
   @HostListener('mouseleave') onMouseLeave() {
